@@ -2,7 +2,7 @@ import numpy as np
 import scipy as sc
 import matplotlib.pyplot as plt
 
-f = open(f"C:/Users/admin/OneDrive/Рабочий стол/Prog/PY/3 sem/symscilab/ep 2/large.txt", 'r')
+f = open(f"C:/Users/User/Desktop/large.txt", 'r')
 data = [i.rstrip() for i in f.readlines()]
 f.close()
 N = int(data[0])
