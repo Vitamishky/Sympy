@@ -1,0 +1,19 @@
+import numpy as np
+import scipy as sc
+import matplotlib.pyplot as plt
+
+f = open(f"C:/Users/admin/OneDrive/Рабочий стол/Prog/PY/3 sem/symscilab/ep 2/large.txt", 'r')
+data = [i.rstrip() for i in f.readlines()]
+f.close()
+N = int(data[0])
+A = np.array([i.split() for i in data[1 : N + 1]], dtype = np.float64)
+b = np.array(data[-1].split(), dtype = np.float64)
+x = sc.linalg.solve(A, b)
+
+fig, ax = plt.subplots()
+fig.set_figheight(7)
+fig.set_figwidth(14)
+ax.grid(True)
+ax.bar(np.arange(x.size), x, width = 0.5)
+
+plt.show()
